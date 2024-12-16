@@ -11,7 +11,6 @@ const Login = () => {
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
 
     const onSubmit = data => {
-        console.log(data)
         loginApi(data)
     };
 
@@ -58,7 +57,7 @@ const Login = () => {
                                     <button
                                         type="submit"
                                         className="btn l-cyan btn-round btn-lg btn-block waves-effect waves-light">
-                                        <Link to="/Home/blank" style={{ textDecoration: 'none', color: 'inherit' }}>
+                                        <Link to='#' style={{ textDecoration: 'none', color: 'inherit' }}>
                                             SIGN IN
                                         </Link>
                                     </button>
