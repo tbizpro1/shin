@@ -12,15 +12,12 @@ import LeftSideBar from './app/components/LeftSideBar/leftsidebar';
 function App() {
 
   return (
-    // <BrowserRouter>
-    //   <Routes>
-    //     {/* <Route path='/' element={<Login />} /> */}
-    //     <Route path='/' element={<TopBar/>}/>
-    //   </Routes>
-    // </BrowserRouter>
-    <>
-    <Home/>
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route path='/' element={<Login />} />
+        <Route path='/app/pages/blank' element={<Home/>} />
+      </Routes>
+    </BrowserRouter>
   )
 }
 

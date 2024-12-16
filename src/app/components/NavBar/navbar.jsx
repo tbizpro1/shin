@@ -29,9 +29,9 @@ const NavBar = () => {
                                     <p className="d-lg-none d-xl-none">Twitter</p>
                                 </a>
                             </li>
-                            <li className="nav-item">
+                            {/* <li className="nav-item">
                                 <a className="nav-link btn btn-primary btn-round" href="sign-up.html">SIGN UP</a>
-                            </li>
+                            </li> */}
                         </ul>
                     </div>
                 </div>
