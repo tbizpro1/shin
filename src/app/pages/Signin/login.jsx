@@ -6,6 +6,7 @@ import { useForm } from "react-hook-form";
 import { loginApi } from "../../api/post/token";
 import { Link } from "react-router-dom";
 
+
 const Login = () => {
 
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
@@ -57,7 +58,7 @@ const Login = () => {
                                     <button
                                         type="submit"
                                         className="btn l-cyan btn-round btn-lg btn-block waves-effect waves-light">
-                                        <Link to='#' style={{ textDecoration: 'none', color: 'inherit' }}>
+                                        <Link to='/app/pages/blank' style={{ textDecoration: 'none', color: 'inherit' }}>
                                             SIGN IN
                                         </Link>
                                     </button>
