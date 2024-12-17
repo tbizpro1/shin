@@ -1,17 +1,29 @@
-import React from "react";
+import React, { useContext } from "react";
 import NavBar from "../../components/NavBar/navbar";
 import Footer from "../../components/Footer/footer";
 // hook para captacao de inputs e que substitui o state
 import { useForm } from "react-hook-form";
 import { loginApi } from "../../api/post/token";
-import { Link } from "react-router-dom";
+import Cookies from "js-cookie";
+import { Outlet } from "react-router";
+import { useNavigate } from "react-router-dom";
+import { AuthContext } from "../../context/authContext";
 
 const Login = () => {
+    const {setToken} = useContext(AuthContext)
+    const { register, handleSubmit } = useForm();
 
-    const { register, handleSubmit, watch, formState: { errors } } = useForm();
+    let navigate = useNavigate();
 
     const onSubmit = data => {
-        loginApi(data)
+        console.log("aguardando resposta da api...")
+
+        loginApi(data).then(response => {
+            Cookies.set("token", response.token)
+            setToken(Cookies.get("token"))
+            alert("Um momento, estamos lhe encaminhamos para sua área de trabalho!")
+            return navigate("/workspace");
+        })
     };
 
     return (
@@ -57,9 +69,7 @@ const Login = () => {
                                     <button
                                         type="submit"
                                         className="btn l-cyan btn-round btn-lg btn-block waves-effect waves-light">
-                                        <Link to='#' style={{ textDecoration: 'none', color: 'inherit' }}>
                                             SIGN IN
-                                        </Link>
                                     </button>
                                     <h6 className="m-t-20">
                                         <a href="forgot-password.html" className="link">Forgot Password?</a>
@@ -71,6 +81,7 @@ const Login = () => {
                 </div>
                 <Footer />
             </div>
+            <Outlet />
         </div>
     );
 }
