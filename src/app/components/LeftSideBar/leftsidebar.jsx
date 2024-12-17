@@ -1,6 +1,7 @@
 import React from "react";
 
 const LeftSideBar = () => {
+    
     return (
         <aside id="leftsidebar" className="sidebar">
             <div className="menu">
@@ -24,13 +25,13 @@ const LeftSideBar = () => {
                         </div>
                     </li>
                     <li>
-                        <a href="javascript:void(0);" className="menu-toggle">
+                        <a href="javascript:void(0);" className="menu-toggle waves-effect waves-block toggled">
                             <i className="zmdi zmdi-accounts-outline"></i><span>Sócios</span>
                         </a>
-                        <ul className="ml-menu">
-                            <li><a href="agent.html">Todos os sócios</a></li>
-                            <li><a href="add-agent.html">Adicionar sócio</a></li>
-                            <li><a href="profile.html">Perfil do sócio</a></li>
+                        <ul className="ml-menu" style={{display :  'block'}}>
+                            <li><a className=" waves-effect waves-block">Todos os sócios</a></li>
+                            <li><a className=" waves-effect waves-block">Adicionar sócio</a></li>
+                            <li><a className=" waves-effect waves-block">Perfil do sócio</a></li>
                         </ul>
                     </li>
                     {/* <li><a href="reports.html"><i className="zmdi zmdi-file-text"></i><span>Dashboard</span></a></li>
