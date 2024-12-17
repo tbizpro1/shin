@@ -1,11 +1,19 @@
-import React from "react";
+import React, { useContext, useEffect } from "react";
 import TopBar from "../../components/TopBar/topbar";
 import LeftSideBar from "../../components/LeftSideBar/leftsidebar";
 import RightSideBar from "../../components/RigthSideBar/rigthsidebar";
 import Chat from "../../components/Chat/chat";
 import MainContent from "../../components/MainContent/maincontent";
-
+import { Outlet } from "react-router";
+import { AuthContext } from "../../context/authContext";
 const Home = () => {
+    const {token} = useContext(AuthContext)
+
+    useEffect(()=> {
+        console.log("home token: ", token)
+
+    }, [])
+    
     return (
         <div className="theme-purple">
             {/* <div className="overlay"></div> */}
@@ -20,6 +28,7 @@ const Home = () => {
             <RightSideBar />
             <Chat />
             <MainContent />
+            <Outlet />
         </div>
     )
 }

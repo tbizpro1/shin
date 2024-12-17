@@ -6,8 +6,7 @@ import "./assets/css/color_skins.css"
 
 import Login from './app/pages/Signin/login'
 import Home from './app/pages/Home/blank'
-import TopBar from './app/components/TopBar/topbar';
-import LeftSideBar from './app/components/LeftSideBar/leftsidebar';
+import ProtectedRouter from './app/components/ProtectedRouter/protectedRouter';
 
 function App() {
 
@@ -15,7 +14,8 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path='/' element={<Login />} />
-        <Route path='/app/pages/blank' element={<Home/>} />
+        <Route path='/workspace' element={ <ProtectedRouter page={Home}/>} />
+        {/* <Route path='/workspace' element={ <Home/>} /> */}
       </Routes>
     </BrowserRouter>
   )
