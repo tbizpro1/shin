@@ -9,6 +9,7 @@ import { Outlet } from "react-router";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../../context/authContext";
 
+
 const Login = () => {
     const {setToken} = useContext(AuthContext)
     const { register, handleSubmit } = useForm();
