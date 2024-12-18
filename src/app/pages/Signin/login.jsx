@@ -84,24 +84,8 @@ const Login = () => {
                                         </form>
                                     </div>
                                 </div>
-<<<<<<< HEAD
-                                <div className="footer text-center">
-                                    <button
-                                        type="submit"
-                                        className="btn l-cyan btn-round btn-lg btn-block waves-effect waves-light">
-                                        <Link to='/app/pages/blank' style={{ textDecoration: 'none', color: 'inherit' }}>
-                                            SIGN IN
-                                        </Link>
-                                    </button>
-                                    <h6 className="m-t-20">
-                                        <a href="forgot-password.html" className="link">Forgot Password?</a>
-                                    </h6>
-                                </div>
-                            </form>
-=======
                             </div>
                             <Footer />
->>>>>>> b1a415d94beff4f1719504772fc2123cf76700a2
                         </div>
                     </>
                 ) : (
