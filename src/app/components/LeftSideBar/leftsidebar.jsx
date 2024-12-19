@@ -1,12 +1,15 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../context/authContext";
 
-const LeftSideBar = () => {
+const LeftSideBar = () => { //desestruturacao props: o componente usa {user} para acessar diretamente as propriedades passadas
     const [menuClicado, setMenuCliclado] = useState(false) //estado para controle de colapso
 
     const handleMenuCliclado = () => {
         setMenuCliclado(!menuClicado); //inverte o estado atual
     }
+
+    const {user} = useContext(AuthContext)
 
     return (
         <aside id="leftsidebar" className="sidebar">
@@ -20,7 +23,8 @@ const LeftSideBar = () => {
                                 </a>
                             </div>
                             <div className="detail">
-                                <h4>Lucas</h4>
+                                {/* validacao condicional de user: evita erros em casos undefined ou null */}
+                                <h4>{user?.username || 'Usuário não definido'}</h4> 
                                 <small>Tech Lead at Inovat</small>
                             </div>
                             <a href="#" title="Events"><i className="zmdi zmdi-calendar"></i></a>
@@ -38,26 +42,11 @@ const LeftSideBar = () => {
                             <i className="zmdi zmdi-accounts-outline"></i><span>Sócios</span>
                         </a>
                         <ul className="ml-menu" style={{display: menuClicado ? 'block' : 'none'}}>
-                            {/* <li><a href="agent.html">Todos os sócios</a></li> */}
                             <li><Link to='/socio'>Todos os sócios</Link></li>
-                            <li><a href="add-agent.html">Adicionar sócio</a></li>
-                            <li><a href="profile.html">Perfil do sócio</a></li>
+                            <li><Link to='/addsocio'>Adicionar sócio</Link></li>
+                            <li><Link to='/perfil'>Perfil do sócio</Link></li>
                         </ul>
                     </li>
-                    {/* <li><a href="reports.html"><i className="zmdi zmdi-file-text"></i><span>Dashboard</span></a></li>
-                    <li>
-                        <a href="javascript:void(0);" className="menu-toggle">
-                            <i className="zmdi zmdi-apps"></i><span>App</span>
-                        </a>
-                        <ul className="ml-menu">
-                            <li><a href="mail-inbox.html">Inbox</a></li>
-                            <li><a href="chat.html">Chat</a></li>
-                            <li><a href="events.html">Calendar</a></li>
-                            <li><a href="file-dashboard.html">File Manager</a></li>
-                            <li><a href="contact.html">Contact list</a></li>
-                            <li><a href="blog-dashboard.html">Blog</a></li>
-                        </ul>
-                    </li> */}
                 </ul>
             </div>
         </aside>

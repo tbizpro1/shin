@@ -11,7 +11,7 @@ import { AuthContext } from "../../context/authContext";
 
 
 const Login = () => {
-    const {setToken} = useContext(AuthContext)
+    const {setToken, setUserId} = useContext(AuthContext)
     const { register, handleSubmit } = useForm();
     const [isLoading, setIsLoading] = useState(false)
 
@@ -22,8 +22,10 @@ const Login = () => {
         setIsLoading(true)
 
         loginApi(data).then(response => {
+            Cookies.set("user_id", response.user.id)
             Cookies.set("token", response.token)
             setToken(Cookies.get("token"))
+            setUserId(Cookies.get('user_id'))
             setIsLoading(false)
             return navigate("/workspace");
         })
