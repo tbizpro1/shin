@@ -10,15 +10,19 @@ import Login from './app/pages/Signin/login'
 import Home from './app/pages/Home/blank'
 import ProtectedRouter from './app/components/ProtectedRouter/protectedRouter';
 import AgentsPage from './app/pages/Socio/socio';
+import { AddSocio } from './app/pages/AddSocio/addsocio';
+import AgentProfile from './app/pages/Perfil/perfil';
 
 function App() {
 
   return (
     <BrowserRouter>
       <Routes>
-        <Route path='/' element={<Home />} />
-        {/* <Route path='/workspace' element={ <ProtectedRouter page={Home}/>} /> */}
-        <Route path='/socio' element={<ProtectedRouter page={AgentsPage}/>}/>
+        <Route path='/' element={<Login />} />
+        <Route path='/workspace' element={ <ProtectedRouter page={Home} />} />
+        <Route path='/socio' element={<ProtectedRouter page={AgentsPage} />} />
+        <Route path='/addsocio' element={<ProtectedRouter page={AddSocio} />} />
+        <Route path='/perfil' element={<ProtectedRouter page={AgentProfile} />} />
       </Routes>
     </BrowserRouter>
   )

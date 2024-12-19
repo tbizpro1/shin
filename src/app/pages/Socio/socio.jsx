@@ -1,4 +1,8 @@
 import React from "react";
+import TopBar from "../../components/TopBar/topbar";
+import LeftSideBar from "../../components/LeftSideBar/leftsidebar";
+import RightSideBar from "../../components/RigthSideBar/rigthsidebar";
+import Chat from "../../components/Chat/chat";
 
 const AgentCard = ({ avatar, name, location, teamAvatars, startupAvatars, phone, email, socialLinks }) => (
   <div className="col-lg-4 col-md-6">
@@ -111,54 +115,60 @@ const AgentsPage = () => {
   ];
 
   return (
-    <section className="content agent">
-      <div className="block-header">
-        <div className="row">
-          <div className="col-lg-7 col-md-6 col-sm-12">
-            <h2>
-              All Agents
-              <small className="text-muted">Welcome to Shin</small>
-            </h2>
-          </div>
-          <div className="col-lg-5 col-md-6 col-sm-12">
-            <button
-              className="btn btn-primary btn-icon btn-round hidden-sm-down float-right m-l-10"
-              type="button"
-            >
-              <i className="zmdi zmdi-plus"></i>
-            </button>
-            <ul className="breadcrumb float-md-right">
-              <li className="breadcrumb-item">
-                <a href="index.html">
-                  <i className="zmdi zmdi-home"></i> Shin
-                </a>
-              </li>
-              <li className="breadcrumb-item">
-                <a href="javascript:void(0);">Agents</a>
-              </li>
-              <li className="breadcrumb-item active">All Agents</li>
-            </ul>
+    <div className="theme-purple">
+      <TopBar />
+      <LeftSideBar />
+      <RightSideBar />
+      <Chat />
+      <section className="content agent">
+        <div className="block-header">
+          <div className="row">
+            <div className="col-lg-7 col-md-6 col-sm-12">
+              <h2>
+                All Agents
+                <small className="text-muted">Welcome to Shin</small>
+              </h2>
+            </div>
+            <div className="col-lg-5 col-md-6 col-sm-12">
+              <button
+                className="btn btn-primary btn-icon btn-round hidden-sm-down float-right m-l-10"
+                type="button"
+              >
+                <i className="zmdi zmdi-plus"></i>
+              </button>
+              <ul className="breadcrumb float-md-right">
+                <li className="breadcrumb-item">
+                  <a href="index.html">
+                    <i className="zmdi zmdi-home"></i> Shin
+                  </a>
+                </li>
+                <li className="breadcrumb-item">
+                  <a href="javascript:void(0);">Agents</a>
+                </li>
+                <li className="breadcrumb-item active">All Agents</li>
+              </ul>
+            </div>
           </div>
         </div>
-      </div>
-      <div className="container-fluid">
-        <div className="row clearfix">
-          {agentsData.map((agent, index) => (
-            <AgentCard
-              key={index}
-              avatar={agent.avatar}
-              name={agent.name}
-              location={agent.location}
-              teamAvatars={agent.teamAvatars}
-              startupAvatars={agent.startupAvatars}
-              phone={agent.phone}
-              email={agent.email}
-              socialLinks={agent.socialLinks}
-            />
-          ))}
+        <div className="container-fluid">
+          <div className="row clearfix">
+            {agentsData.map((agent, index) => (
+              <AgentCard
+                key={index}
+                avatar={agent.avatar}
+                name={agent.name}
+                location={agent.location}
+                teamAvatars={agent.teamAvatars}
+                startupAvatars={agent.startupAvatars}
+                phone={agent.phone}
+                email={agent.email}
+                socialLinks={agent.socialLinks}
+              />
+            ))}
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </div>
   );
 };
 
