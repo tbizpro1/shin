@@ -41,7 +41,7 @@ const Header = () => (
     <div className="row">
       <div className="col-lg-7 col-md-6 col-sm-12">
         <h2>
-          Agent Profile
+          Admin Profile
           <small className="text-muted">Welcome to Shin</small>
         </h2>
       </div>
@@ -70,7 +70,7 @@ const Breadcrumb = () => (
 );
 
 const ProfileCard = () => {
-  //puxa do authcontext as informacoes armazenadas de dentro do estado user
+  //pega do authcontext as informacoes armazenadas de dentro do estado user
   const { user } = useContext(AuthContext)
 
   return (
@@ -83,7 +83,7 @@ const ProfileCard = () => {
         <img
           // src="/api/placeholder/150/150"
           src="src/assets/images/profile_av.jpg"
-          // className="rounded-circle"
+          className="rounded-circle"
           alt="profile-image"
         />
         {/* </a> */}
@@ -151,7 +151,7 @@ const AboutCard = () => {
         />
         <TabItem
           id="friends"
-          label="Friends"
+          label="Agents"
           activeTab={activeTab}
           onClick={() => setActiveTab('friends')}
         />
@@ -176,7 +176,7 @@ const TabItem = ({ id, label, activeTab, onClick }) => (
 
 const AboutContent = () => (
   <div className="tab-pane body active" id="about">
-    <InfoItem label="Position" value="Agent" />
+    <InfoItem label="Position" value="Admin" />
     <InfoItem label="Estate" value="Cleveland" />
     <InfoItem label="Email address" value="michael@gmail.com" />
     <InfoItem label="Phone" value="+ 202-555-0191" />
@@ -230,15 +230,14 @@ const SkillItem = ({ name, progress, color }) => (
 const FriendsContent = () => {
   const friends = [
     { name: 'Jackson', joinDate: 'Today', image: 'src/assets/images/sm/avatar1.jpg' },
-    // { name: 'Aubrey', joinDate: 'Yesterday', image: 'avatar2.jpg' },
-    // { name: 'Oliver', joinDate: '08 Nov', image: 'avatar3.jpg' },
-    // { name: 'Isabella', joinDate: '12 Dec', image: 'avatar4.jpg' },
-    // { name: 'Jacob', joinDate: '12 Dec', image: 'avatar1.jpg' },
-    // { name: 'Matthew', joinDate: '17 Dec', image: 'avatar5.jpg' },
+    { name: 'Aubrey', joinDate: 'Yesterday', image: 'src/assets/images/sm/avatar2.jpg' },
+    { name: 'Oliver', joinDate: '08 Nov', image: 'src/assets/images/sm/avatar3.jpg' },
+    { name: 'Isabella', joinDate: '12 Dec', image: 'src/assets/images/sm/avatar4.jpg' },
+    { name: 'Matthew', joinDate: '17 Dec', image: 'src/assets/images/sm/avatar5.jpg' },
   ];
 
   return (
-    <div className="tab-pane body" id="friends">
+    <div className="tab-pane body active" id="friends">
       <ul className="new_friend_list list-unstyled row">
         {friends.map((friend) => (
           <FriendItem key={friend.name} {...friend} />
@@ -264,8 +263,8 @@ const FriendItem = ({ name, joinDate, image }) => (
 
 const MainContent = ({ activeTab, setActiveTab }) => {
   const tabs = [
-    { id: 'mypost', label: 'My Post' },
-    { id: 'timeline', label: 'Timeline' },
+    // { id: 'mypost', label: 'My Post' },
+    // { id: 'timeline', label: 'Timeline' },
     { id: 'usersettings', label: 'Setting' },
   ];
 

@@ -75,7 +75,7 @@ const onSubmit = (data) => {
                                 <textarea rows="4" className="form-control no-resize" placeholder="Address Line 1"></textarea>
                             </div>
                         </div>
-                        <div className="col-md-12">
+                        {/* <div className="col-md-12">
                             <div className="checkbox">
                                 <input id="procheck1" type="checkbox" />
                                 <label for="procheck1">Profile Visibility For Everyone</label>
@@ -88,7 +88,7 @@ const onSubmit = (data) => {
                                 <input id="procheck3" type="checkbox" />
                                 <label for="procheck3">New friend request notifications</label>
                             </div>
-                        </div>
+                        </div> */}
                         <div className="col-md-12">
                             <button type="submit" className="btn btn-primary btn-round">Save Changes</button>
                         </div>
