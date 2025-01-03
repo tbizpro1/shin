@@ -8,7 +8,10 @@ const TopBar = () => {
             <a href="#" className="bars"></a>
             <a className="navbar-brand" href="#">
               <img src="src/assets/images/logo.svg" width="30" alt="Shin" />
-              <span className="m-l-10">SHIN</span>
+              <span 
+              className="m-l-10"
+              >SHIN
+              </span>
             </a>
           </div>
           <ul className="nav navbar-nav navbar-left">

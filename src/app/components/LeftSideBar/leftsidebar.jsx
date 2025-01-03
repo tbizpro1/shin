@@ -18,9 +18,9 @@ const LeftSideBar = () => { //desestruturacao props: o componente usa {user} par
                     <li>
                         <div className="user-info">
                             <div className="image">
-                                <a href="profile.html">
+                                <Link to="/perfil">
                                     <img src="src/assets/images/profile_av.jpg" alt="User" />
-                                </a>
+                                </Link>
                             </div>
                             <div className="detail">
                                 {/* validacao condicional de user: evita erros em casos undefined ou null */}
