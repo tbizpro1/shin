@@ -2,7 +2,6 @@ import React, { useContext, useState } from "react";
 import NavBar from "../../components/NavBar/navbar";
 import Footer from "../../components/Footer/footer";
 // hook para captacao de inputs e que substitui o state
-
 import { useForm } from "react-hook-form";
 import { loginApi } from "../../api/post/token";
 import Cookies from "js-cookie";
@@ -10,8 +9,9 @@ import { Outlet } from "react-router";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../../context/authContext";
 
+
 const Login = () => {
-    const {setToken} = useContext(AuthContext)
+    const {setToken, setUserId} = useContext(AuthContext)
     const { register, handleSubmit } = useForm();
     const [isLoading, setIsLoading] = useState(false)
 
@@ -22,8 +22,10 @@ const Login = () => {
         setIsLoading(true)
 
         loginApi(data).then(response => {
+            Cookies.set("user_id", response.user.id)
             Cookies.set("token", response.token)
             setToken(Cookies.get("token"))
+            setUserId(Cookies.get('user_id'))
             setIsLoading(false)
             return navigate("/workspace");
         })
@@ -94,6 +96,7 @@ const Login = () => {
                             <div className="loader">
                                 <div className="m-t-30"><img className="zmdi-hc-spin" src="src/assets/images/logo.svg" width="48" height="48" alt="Compass" /></div>
                                 <p>Please wait...</p>
+                                {/* <p>Preparando área de trabalho ...</p> */}
                             </div>
                         </div>
                     </>
