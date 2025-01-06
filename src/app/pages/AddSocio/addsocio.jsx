@@ -127,7 +127,7 @@ export const AddSocio = () => {
                                             <form
                                                 action="/"
                                                 id="frmFileUpload"
-                                                className="dropzone"
+                                                className="dropzone dz-clickable"
                                                 method="post"
                                                 encType="multipart/form-data"
                                             >

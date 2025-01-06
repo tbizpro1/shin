@@ -6,7 +6,7 @@ const TopBar = () => {
         <div className="col-12">
           <div className="navbar-header">
             <a href="#" className="bars"></a>
-            <a className="navbar-brand" href="#">
+            <a className="navbar-brand" href="/workspace">
               <img src="src/assets/images/logo.svg" width="30" alt="Shin" />
               <span 
               className="m-l-10"

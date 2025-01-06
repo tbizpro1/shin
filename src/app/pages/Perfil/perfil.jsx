@@ -7,10 +7,10 @@ import Chat from "../../components/Chat/chat";
 import { AuthContext } from '../../context/authContext';
 import MyPosts from '../../components/MyPost/mypost';
 import UserSettings from '../../components/UserSettings/usersettings';
-import Timeline from '../../components/Timeline/timeline';
+import Timeline from '../../components/Timeline/timeline';  
 
 const AgentProfile = () => {
-  const [activeTab, setActiveTab] = useState('mypost');
+  const [activeTab, setActiveTab] = useState('usersettings');
 
   return (
     <div className="theme-purple">
@@ -47,7 +47,8 @@ const Header = () => (
       </div>
       <div className="col-lg-5 col-md-6 col-sm-12">
         <button className="btn btn-primary btn-icon btn-round hidden-sm-down float-right m-l-10">
-          <Plus size={24} />
+          {/* <Plus size={24} /> */}
+          <i class="zmdi zmdi-plus"></i>
         </button>
         <Breadcrumb />
       </div>
@@ -59,11 +60,11 @@ const Breadcrumb = () => (
   <ul className="breadcrumb float-md-right">
     <li className="breadcrumb-item">
       <a href="/workspace">
-        <Home size={18} /> Shin
+      <i class="zmdi zmdi-home"></i> Shin
       </a>
     </li>
     <li className="breadcrumb-item">
-      <a href="#">Agent</a>
+      <a href="javascript:void(0);">Agent</a>
     </li>
     <li className="breadcrumb-item active">Agent Profile</li>
   </ul>
@@ -284,8 +285,8 @@ const MainContent = ({ activeTab, setActiveTab }) => {
         </ul>
       </div>
       <div className="tab-content">
-        {activeTab === 'mypost' && <MyPosts />}
-        {activeTab === 'timeline' && <Timeline />}
+        {/* {activeTab === 'mypost' && <MyPosts />}
+        {activeTab === 'timeline' && <Timeline />} */}
         {activeTab === 'usersettings' && <UserSettings />}
       </div>
     </>
