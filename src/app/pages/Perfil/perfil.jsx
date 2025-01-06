@@ -7,10 +7,10 @@ import Chat from "../../components/Chat/chat";
 import { AuthContext } from '../../context/authContext';
 import MyPosts from '../../components/MyPost/mypost';
 import UserSettings from '../../components/UserSettings/usersettings';
-import Timeline from '../../components/Timeline/timeline';
+import Timeline from '../../components/Timeline/timeline';  
 
 const AgentProfile = () => {
-  const [activeTab, setActiveTab] = useState('mypost');
+  const [activeTab, setActiveTab] = useState('usersettings');
 
   return (
     <div className="theme-purple">
@@ -41,13 +41,14 @@ const Header = () => (
     <div className="row">
       <div className="col-lg-7 col-md-6 col-sm-12">
         <h2>
-          Agent Profile
+          Admin Profile
           <small className="text-muted">Welcome to Shin</small>
         </h2>
       </div>
       <div className="col-lg-5 col-md-6 col-sm-12">
         <button className="btn btn-primary btn-icon btn-round hidden-sm-down float-right m-l-10">
-          <Plus size={24} />
+          {/* <Plus size={24} /> */}
+          <i class="zmdi zmdi-plus"></i>
         </button>
         <Breadcrumb />
       </div>
@@ -59,18 +60,18 @@ const Breadcrumb = () => (
   <ul className="breadcrumb float-md-right">
     <li className="breadcrumb-item">
       <a href="/workspace">
-        <Home size={18} /> Shin
+      <i class="zmdi zmdi-home"></i> Shin
       </a>
     </li>
     <li className="breadcrumb-item">
-      <a href="#">Agent</a>
+      <a href="javascript:void(0);">Agent</a>
     </li>
     <li className="breadcrumb-item active">Agent Profile</li>
   </ul>
 );
 
 const ProfileCard = () => {
-  //puxa do authcontext as informacoes armazenadas de dentro do estado user
+  //pega do authcontext as informacoes armazenadas de dentro do estado user
   const { user } = useContext(AuthContext)
 
   return (
@@ -83,7 +84,7 @@ const ProfileCard = () => {
         <img
           // src="/api/placeholder/150/150"
           src="src/assets/images/profile_av.jpg"
-          // className="rounded-circle"
+          className="rounded-circle"
           alt="profile-image"
         />
         {/* </a> */}
@@ -151,7 +152,7 @@ const AboutCard = () => {
         />
         <TabItem
           id="friends"
-          label="Friends"
+          label="Agents"
           activeTab={activeTab}
           onClick={() => setActiveTab('friends')}
         />
@@ -176,7 +177,7 @@ const TabItem = ({ id, label, activeTab, onClick }) => (
 
 const AboutContent = () => (
   <div className="tab-pane body active" id="about">
-    <InfoItem label="Position" value="Agent" />
+    <InfoItem label="Position" value="Admin" />
     <InfoItem label="Estate" value="Cleveland" />
     <InfoItem label="Email address" value="michael@gmail.com" />
     <InfoItem label="Phone" value="+ 202-555-0191" />
@@ -234,7 +235,6 @@ const FriendsContent = () => {
     { name: 'Aubrey', joinDate: 'Yesterday', image: 'src/assets/images/sm/avatar2.jpg' },
     { name: 'Oliver', joinDate: '08 Nov', image: 'src/assets/images/sm/avatar3.jpg' },
     { name: 'Isabella', joinDate: '12 Dec', image: 'src/assets/images/sm/avatar4.jpg' },
-    { name: 'Jacob', joinDate: '12 Dec', image: 'src/assets/images/sm/avatar1.jpg' },
     { name: 'Matthew', joinDate: '17 Dec', image: 'src/assets/images/sm/avatar5.jpg' },
   ];
 
@@ -269,8 +269,8 @@ const FriendItem = ({ name, joinDate, image }) => {
 
 const MainContent = ({ activeTab, setActiveTab }) => {
   const tabs = [
-    { id: 'mypost', label: 'My Post' },
-    { id: 'timeline', label: 'Timeline' },
+    // { id: 'mypost', label: 'My Post' },
+    // { id: 'timeline', label: 'Timeline' },
     { id: 'usersettings', label: 'Setting' },
   ];
 
@@ -290,8 +290,8 @@ const MainContent = ({ activeTab, setActiveTab }) => {
         </ul>
       </div>
       <div className="tab-content">
-        {activeTab === 'mypost' && <MyPosts />}
-        {activeTab === 'timeline' && <Timeline />}
+        {/* {activeTab === 'mypost' && <MyPosts />}
+        {activeTab === 'timeline' && <Timeline />} */}
         {activeTab === 'usersettings' && <UserSettings />}
       </div>
     </>
