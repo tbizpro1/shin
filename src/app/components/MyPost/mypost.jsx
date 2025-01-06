@@ -1,3 +1,39 @@
+import React, { useState } from "react";
+
+const Post = (step) => {
+    switch (step) {
+        case 0 :
+            return  (
+                <div className="carousel-item active">
+                    <img className="d-block img-fluid" src="src/assets/images/blog/blog-page-1.jpg" alt="First slide" />
+                </div>
+            )
+        case 1 :
+            return  (
+                    <div className="carousel-item active">
+                        <img className="d-block img-fluid" src="src/assets/images/blog/blog-page-2.jpg" alt="Second slide" />
+                    </div>
+                )
+        case 2 :
+            return  (
+                <div className="carousel-item active">
+                    <img className="d-block img-fluid" src="src/assets/images/blog/blog-page-2.jpg" alt="Second slide" />
+                </div>
+            )
+    }
+}
+
+const MyPosts = () => {
+    const [step, setStep] = useState(0)
+
+    const handleStepNext = () => {
+        setStep(step+1)
+    }
+    const handleStepPreview = () => {
+        setStep(step-1)
+    }
+
+
 import React from "react";
 
 const MyPosts = () => {
@@ -17,6 +53,13 @@ const MyPosts = () => {
                         <div className="img-post m-b-15">
                             <div id="carouselExampleControls" className="carousel slide" data-ride="carousel">
                                 <div className="carousel-inner" role="listbox">
+                                    <Post step={step}/>
+                                </div>
+                                <a onClick={() => handleStepPreview()} className="carousel-control-prev" role="button" data-slide="prev">
+                                    <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span className="sr-only">Previous</span>
+                                </a>
+                                <a onClick={() => handleStepNext()} className="carousel-control-next"  role="button" data-slide="next">
                                     <div className="carousel-item active">
                                         <img className="d-block img-fluid" src="assets/images/blog/blog-page-1.jpg" alt="First slide" />
                                     </div>
@@ -57,7 +100,7 @@ const MyPosts = () => {
                     </div>
                     <div className="body">
                         <div className="img-post m-b-15">
-                            <img src="assets/images/blog/blog-page-2.jpg" alt="Awesome Image" />
+                            <img src="src/assets/images/blog/blog-page-2.jpg" alt="Awesome Image" />
                             <div className="social_share">
                                 <button className="btn btn-primary btn-icon btn-icon-mini btn-round"><i className="zmdi zmdi-facebook"></i></button>
                                 <button className="btn btn-primary btn-icon btn-icon-mini btn-round"><i className="zmdi zmdi-twitter"></i></button>
@@ -81,7 +124,7 @@ const MyPosts = () => {
                             </div>
                             <div className="body">
                                 <div className="img-post m-b-15">
-                                    <img src="assets/images/blog/blog-page-3.jpg" alt="Awesome Image" />
+                                    <img src="src/assets/images/blog/blog-page-3.jpg" alt="Awesome Image" />
                                     <div className="social_share">
                                         <button className="btn btn-primary btn-icon btn-icon-mini btn-round"><i className="zmdi zmdi-facebook"></i></button>
                                         <button className="btn btn-primary btn-icon btn-icon-mini btn-round"><i className="zmdi zmdi-twitter"></i></button>
@@ -105,7 +148,7 @@ const MyPosts = () => {
                             </div>
                             <div className="body">
                                 <div className="img-post m-b-15">
-                                    <img src="assets/images/blog/blog-page-4.jpg" alt="Awesome Image" />
+                                    <img src="src/assets/images/blog/blog-page-4.jpg" alt="Awesome Image" />
                                     <div className="social_share">
                                         <button className="btn btn-primary btn-icon btn-icon-mini btn-round"><i className="zmdi zmdi-facebook"></i></button>
                                         <button className="btn btn-primary btn-icon btn-icon-mini btn-round"><i className="zmdi zmdi-twitter"></i></button>

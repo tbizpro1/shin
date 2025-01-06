@@ -9,7 +9,10 @@ const LeftSideBar = () => { //desestruturacao props: o componente usa {user} par
         setMenuCliclado(!menuClicado); //inverte o estado atual
     }
 
-    const {user} = useContext(AuthContext)
+
+    const {user, enterprise} = useContext(AuthContext)
+
+    console.log(enterprise)
 
     return (
         <aside id="leftsidebar" className="sidebar">
@@ -25,7 +28,8 @@ const LeftSideBar = () => { //desestruturacao props: o componente usa {user} par
                             <div className="detail">
                                 {/* validacao condicional de user: evita erros em casos undefined ou null */}
                                 <h4>{user?.username || 'Usuário não definido'}</h4> 
-                                <small>Tech Lead at Inovat</small>
+
+                                <small>{user.profession} | {enterprise[0]?.enterprise_name || 'Usuário não definido'}</small>
                             </div>
                             <a href="#" title="Events"><i className="zmdi zmdi-calendar"></i></a>
                             <a href="#" title="Inbox"><i className="zmdi zmdi-email"></i></a>
@@ -34,7 +38,8 @@ const LeftSideBar = () => { //desestruturacao props: o componente usa {user} par
                             <a href="/" title="Sign out"><i className="zmdi zmdi-power"></i></a>
                         </div>
                     </li>
-                    <li>
+
+                    <li> 
                         <a href="#" 
                         className={`menu-toggle waves-effect waves-block ${menuClicado ? 'toggled' : ''}`}
                         onClick={handleMenuCliclado}
@@ -45,6 +50,8 @@ const LeftSideBar = () => { //desestruturacao props: o componente usa {user} par
                             <li><Link to='/socio'>Todos os sócios</Link></li>
                             <li><Link to='/addsocio'>Adicionar sócio</Link></li>
                             <li><Link to='/perfil'>Perfil do sócio</Link></li>
+                            <li><Link to='/explorer'>Convidar sócio</Link></li>
+
                         </ul>
                     </li>
                 </ul>

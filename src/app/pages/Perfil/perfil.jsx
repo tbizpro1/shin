@@ -228,6 +228,7 @@ const SkillItem = ({ name, progress, color }) => (
   </li>
 );
 
+
 const FriendsContent = () => {
   const friends = [
     { name: 'Jackson', joinDate: 'Today', image: 'src/assets/images/sm/avatar1.jpg' },
@@ -248,19 +249,23 @@ const FriendsContent = () => {
   );
 };
 
-const FriendItem = ({ name, joinDate, image }) => (
-  <li className="col-lg-4 col-md-2 col-sm-6 col-4">
-    <a href="#">
-      <img
-        src={image}
-        className="img-thumbnail"
-        alt={name}
-      />
-      <h6 className="users_name">{name}</h6>
-      <small className="join_date">{joinDate}</small>
-    </a>
-  </li>
-);
+const FriendItem = ({ name, joinDate, image }) => {
+  console.log(name, joinDate, image)
+  return (
+    <li className="col-lg-4 col-md-2 col-sm-6 col-4">
+      <a >
+        <img
+          src={`src/assets/images/sm/avatar1.jpg`}
+          className="img-thumbnail"
+          alt={name}
+        />
+        <h6 className="users_name">{name}</h6>
+        <small className="join_date">{joinDate}</small>
+      </a>
+    </li>
+  )
+}
+
 
 const MainContent = ({ activeTab, setActiveTab }) => {
   const tabs = [

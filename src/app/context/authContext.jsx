@@ -2,6 +2,7 @@ import React, { createContext,useEffect, useState } from "react";
 import Cookies from 'js-cookie'
 import { redirect } from "react-router";
 import { GetUser } from "../api/get/user-profile";
+import userEnterprises from "../api/get/user-enterprises";
 
 
 export const AuthContext = createContext()
@@ -18,7 +19,7 @@ export const AuthProvider = ({children}) => {
         const userId = Cookies.get("user_id");
         //.then recolhe a resposta da funcao GetUser (api)
         GetUser(userId, userToken).then(response=>{setUser(response.data)})
-        console.log(user,'context')
+        userEnterprises(userId, userToken).then(response=>{setEnterprise(response)})
         
         if (userToken !== null) {
             setToken(userToken)
@@ -32,7 +33,7 @@ export const AuthProvider = ({children}) => {
     }, [userId, token]);
 
     return (
-        <AuthContext.Provider value={{token, isAuthentication, setToken, setUserId, userId, user, setUser}}>
+        <AuthContext.Provider value={{token, isAuthentication, setToken, setUserId, userId, user, setUser, enterprise}}>
             {children}
         </AuthContext.Provider>
     )
