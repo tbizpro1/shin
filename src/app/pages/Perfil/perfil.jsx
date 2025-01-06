@@ -5,7 +5,7 @@ import LeftSideBar from "../../components/LeftSideBar/leftsidebar";
 import RightSideBar from "../../components/RigthSideBar/rigthsidebar";
 import Chat from "../../components/Chat/chat";
 import { AuthContext } from '../../context/authContext';
-import MyPosts from '../../components/MyPost/mypost';
+// import MyPosts from '../../components/MyPost/mypost';
 import UserSettings from '../../components/UserSettings/usersettings';
 import Timeline from '../../components/Timeline/timeline';  
 

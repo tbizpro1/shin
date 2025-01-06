@@ -12,6 +12,7 @@ export const AuthProvider = ({children}) => {
     const [isAuthentication, setIsAuthentication] = useState(false)
     const [userId, setUserId] = useState(null)
     const [user, setUser] = useState(null)
+    const [enterprise, setEnterprise] = useState(null)
 
     useEffect(() => {
         const userToken = Cookies.get("token");
