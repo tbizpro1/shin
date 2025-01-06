@@ -96,6 +96,7 @@ const Login = () => {
                             <div className="loader">
                                 <div className="m-t-30"><img className="zmdi-hc-spin" src="src/assets/images/logo.svg" width="48" height="48" alt="Compass" /></div>
                                 <p>Please wait...</p>
+                                {/* <p>Preparando área de trabalho ...</p> */}
                             </div>
                         </div>
                     </>
