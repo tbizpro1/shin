@@ -1,4 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
+
 import TopBar from "../../components/TopBar/topbar";
 import LeftSideBar from "../../components/LeftSideBar/leftsidebar";
 import RightSideBar from "../../components/RigthSideBar/rigthsidebar";
@@ -145,6 +146,7 @@ const AgentsPage = () => {
   },[])
 
   console.log("partns", partners)
+
   return (
     <div className="theme-purple">
       <TopBar />

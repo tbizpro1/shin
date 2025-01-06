@@ -9,6 +9,7 @@ const LeftSideBar = () => { //desestruturacao props: o componente usa {user} par
         setMenuCliclado(!menuClicado); //inverte o estado atual
     }
 
+
     const {user, enterprise} = useContext(AuthContext)
 
     console.log(enterprise)
@@ -27,6 +28,7 @@ const LeftSideBar = () => { //desestruturacao props: o componente usa {user} par
                             <div className="detail">
                                 {/* validacao condicional de user: evita erros em casos undefined ou null */}
                                 <h4>{user?.username || 'Usuário não definido'}</h4> 
+
                                 <small>{user.profession} | {enterprise[0]?.enterprise_name || 'Usuário não definido'}</small>
                             </div>
                             <a href="#" title="Events"><i className="zmdi zmdi-calendar"></i></a>
@@ -36,6 +38,7 @@ const LeftSideBar = () => { //desestruturacao props: o componente usa {user} par
                             <a href="/" title="Sign out"><i className="zmdi zmdi-power"></i></a>
                         </div>
                     </li>
+
                     <li> 
                         <a href="#" 
                         className={`menu-toggle waves-effect waves-block ${menuClicado ? 'toggled' : ''}`}
@@ -48,6 +51,7 @@ const LeftSideBar = () => { //desestruturacao props: o componente usa {user} par
                             <li><Link to='/addsocio'>Adicionar sócio</Link></li>
                             <li><Link to='/perfil'>Perfil do sócio</Link></li>
                             <li><Link to='/explorer'>Convidar sócio</Link></li>
+
                         </ul>
                     </li>
                 </ul>

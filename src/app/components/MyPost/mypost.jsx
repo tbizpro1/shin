@@ -34,6 +34,9 @@ const MyPosts = () => {
     }
 
 
+import React from "react";
+
+const MyPosts = () => {
     return (
         <div className="tab-content">
             <div role="tabpanel" className="tab-pane blog-page active" id="mypost">
@@ -57,6 +60,21 @@ const MyPosts = () => {
                                     <span className="sr-only">Previous</span>
                                 </a>
                                 <a onClick={() => handleStepNext()} className="carousel-control-next"  role="button" data-slide="next">
+                                    <div className="carousel-item active">
+                                        <img className="d-block img-fluid" src="assets/images/blog/blog-page-1.jpg" alt="First slide" />
+                                    </div>
+                                    <div className="carousel-item">
+                                        <img className="d-block img-fluid" src="assets/images/blog/blog-page-2.jpg" alt="Second slide" />
+                                    </div>
+                                    <div className="carousel-item">
+                                        <img className="d-block img-fluid" src="assets/images/blog/blog-page-3.jpg" alt="Third slide" />
+                                    </div>
+                                </div>
+                                <a className="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                                    <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span className="sr-only">Previous</span>
+                                </a>
+                                <a className="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
                                     <span className="carousel-control-next-icon" aria-hidden="true"></span>
                                     <span className="sr-only">Next</span>
                                 </a>

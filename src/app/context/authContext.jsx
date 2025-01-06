@@ -12,7 +12,6 @@ export const AuthProvider = ({children}) => {
     const [isAuthentication, setIsAuthentication] = useState(false)
     const [userId, setUserId] = useState(null)
     const [user, setUser] = useState(null)
-    const [enterprise, setEnterprise] = useState(null)
 
     useEffect(() => {
         const userToken = Cookies.get("token");
@@ -21,7 +20,6 @@ export const AuthProvider = ({children}) => {
         //.then recolhe a resposta da funcao GetUser (api)
         GetUser(userId, userToken).then(response=>{setUser(response.data)})
         userEnterprises(userId, userToken).then(response=>{setEnterprise(response)})
-        console.log(user,'context')
         
         if (userToken !== null) {
             setToken(userToken)

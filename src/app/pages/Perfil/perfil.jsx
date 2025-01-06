@@ -266,6 +266,7 @@ const FriendItem = ({ name, joinDate, image }) => {
   )
 }
 
+
 const MainContent = ({ activeTab, setActiveTab }) => {
   const tabs = [
     { id: 'mypost', label: 'My Post' },
