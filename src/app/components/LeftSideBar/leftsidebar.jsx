@@ -29,8 +29,8 @@ const LeftSideBar = () => { //desestruturacao props: o componente usa {user} par
                                 {/* validacao condicional de user: evita erros em casos undefined ou null */}
                                 <h4>{user?.username || 'Usuário não definido'}</h4> 
 
-                                {/* <small>{user.profession} | {enterprise[0]?.enterprise_name || 'Usuário não definido'}</small> */}
-                                <small>{user.profession} | {'Usuário não definido'}</small>
+                                <small>{user.profession} | {enterprise[0]?.enterprise_name || 'Usuário não definido'}</small>
+                                {/* <small>{user.profession} | {'Usuário não definido'}</small> */}
                             </div>
                             <a href="#" title="Events"><i className="zmdi zmdi-calendar"></i></a>
                             <a href="#" title="Inbox"><i className="zmdi zmdi-email"></i></a>
