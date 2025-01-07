@@ -5,8 +5,6 @@ import { AuthContext } from "../../context/authContext";
 import addUserEnterprise from "../../api/post/add-user-enterprise";
 import allUserEnterprisePending from "../../api/get/all-user-enterprise-pending";
 
-
-
 function MailList() {
     const [users, setUsers] = useState([]);
     const {user, token, enterprise} = useContext(AuthContext)
@@ -33,8 +31,6 @@ function MailList() {
             })
             .catch(error => console.log(error));
     }, [partners]);
-
-
 
     return (
         <section className="content inbox">
