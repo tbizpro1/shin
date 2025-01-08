@@ -6,9 +6,12 @@ const TopBar = () => {
         <div className="col-12">
           <div className="navbar-header">
             <a href="#" className="bars"></a>
-            <a className="navbar-brand" href="#">
-              <img src="src/assets/images/logo.svg" width="30" alt="Compass" />
-              <span className="m-l-10">SHIN</span>
+            <a className="navbar-brand" href="/workspace">
+              <img src="src/assets/images/logo.svg" width="30" alt="Shin" />
+              <span 
+              className="m-l-10"
+              >SHIN
+              </span>
             </a>
           </div>
           <ul className="nav navbar-nav navbar-left">
@@ -105,12 +108,12 @@ const TopBar = () => {
               </a>
             </li>
             <li>
-              <a href="sign-in.html" className="mega-menu" data-close="true">
+              <a href="/" className="mega-menu" data-close="true">
                 <i className="zmdi zmdi-power"></i>
               </a>
             </li>
             <li>
-              <a href="#" className="js-right-sidebar" data-close="true">
+              <a href="javascript:void(0);" className="js-right-sidebar" data-close="true">
                 <i className="zmdi zmdi-settings zmdi-hc-spin"></i>
               </a>
             </li>

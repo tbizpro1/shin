@@ -5,4 +5,5 @@ import react from '@vitejs/plugin-react-swc'
 export default defineConfig({
   base: "/shin/",
   plugins: [react()],
+  base: "/shin"
 })
