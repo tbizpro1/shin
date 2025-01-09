@@ -1,4 +1,5 @@
 import React from "react";
+import { logoLoader } from "../../../assets/images";
 
 const TopBar = () => {
     return (
@@ -7,7 +8,7 @@ const TopBar = () => {
           <div className="navbar-header">
             <a href="#" className="bars"></a>
             <a className="navbar-brand" href="/workspace">
-              <img src="src/assets/images/logo.svg" width="30" alt="Shin" />
+              <img src={logoLoader} width="30" alt="Shin" />
               <span 
               className="m-l-10"
               >SHIN

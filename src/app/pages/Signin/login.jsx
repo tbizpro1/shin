@@ -9,6 +9,8 @@ import { Outlet } from "react-router";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../../context/authContext";
 
+import { backgroundLogin, logoShin, logoLoader } from "../../../assets/images";
+
 
 const Login = () => {
     const {setToken, setUserId} = useContext(AuthContext)
@@ -38,7 +40,7 @@ const Login = () => {
                     <>
                         <NavBar />
                         <div className="page-header">
-                            <div className="page-header-image" style={{ backgroundImage: 'url(src/assets/images/background-login.jpg)' }}></div>
+                            <div className="page-header-image" style={{ backgroundImage: `url(${backgroundLogin})` }}></div>
                             <div className="container">
                                 <div className="col-md-12 content-center">
                                     <div className="card-plain">
@@ -48,7 +50,7 @@ const Login = () => {
                                         >
                                             <div className="header">
                                                 <div className="logo-container">
-                                                    <img src="src/assets/images/stp1.png" alt="SHIN Logo" />
+                                                    <img src={logoShin} alt="SHIN Logo" />
                                                 </div>
                                                 <h5>Log in</h5>
                                             </div>
@@ -94,7 +96,7 @@ const Login = () => {
                     <>
                         <div className="page-loader-wrapper">
                             <div className="loader">
-                                <div className="m-t-30"><img className="zmdi-hc-spin" src="src/assets/images/logo.svg" width="48" height="48" alt="Compass" /></div>
+                                <div className="m-t-30"><img className="zmdi-hc-spin" src={logoLoader} width="48" height="48" alt="Compass" /></div>
                                 <p>Please wait...</p>
                                 {/* <p>Preparando área de trabalho ...</p> */}
                             </div>
