@@ -7,7 +7,9 @@ import Chat from "../../components/Chat/chat";
 import { AuthContext } from '../../context/authContext';
 // import MyPosts from '../../components/MyPost/mypost';
 import UserSettings from '../../components/UserSettings/usersettings';
-import Timeline from '../../components/Timeline/timeline';  
+import Timeline from '../../components/Timeline/timeline'; 
+
+import { profileUser } from '../../../assets/images';
 
 const AgentProfile = () => {
   const [activeTab, setActiveTab] = useState('usersettings');
@@ -83,7 +85,7 @@ const ProfileCard = () => {
         {/* <a href="profile.html"> */}
         <img
           // src="/api/placeholder/150/150"
-          src="src/assets/images/profile_av.jpg"
+          src={profileUser}
           className="rounded-circle"
           alt="profile-image"
         />

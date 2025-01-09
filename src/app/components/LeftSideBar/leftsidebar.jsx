@@ -1,6 +1,7 @@
 import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../context/authContext";
+import { profileUser } from "../../../assets/images";
 
 const LeftSideBar = () => { //desestruturacao props: o componente usa {user} para acessar diretamente as propriedades passadas
     const [menuClicado, setMenuCliclado] = useState(false) //estado para controle de colapso
@@ -22,7 +23,7 @@ const LeftSideBar = () => { //desestruturacao props: o componente usa {user} par
                         <div className="user-info">
                             <div className="image">
                                 <Link to="/perfil">
-                                    <img src="src/assets/images/profile_av.jpg" alt="User" />
+                                    <img src={profileUser} alt="User" />
                                 </Link>
                             </div>
                             <div className="detail">
